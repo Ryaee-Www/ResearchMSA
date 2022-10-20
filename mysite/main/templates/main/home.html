@@ -1,0 +1,16 @@
+{% extends "main/header.html" %}
+
+{% block content %} 
+
+{% load crispy_forms_tags %}         
+
+<div class="container py-5">
+    
+    {% if user.is_authenticated%}
+    <h1>Login Successful</h1>
+    {%else%}
+    <h1>Hello!</h1>
+    <p >Existing User? <a href="/login">Login</a> Here</p>
+    <p>New User? <a href="/register">Register</a> Here</p>
+    {% endif %}
+{% endblock %}

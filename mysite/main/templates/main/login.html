@@ -1,0 +1,22 @@
+{% extends "main/header.html" %}
+
+{% block content %}      
+
+{% load crispy_forms_tags %}
+
+<!--Login--> 
+<div class="container py-5">
+  <h1>Login</h1>
+  
+  <form method="POST" class="d-inline-block">
+    {% csrf_token %}
+    {{ login_form|crispy }}
+    <a href="home" class="btn btn-danger" role="button">Cancel</a>
+    <button class="btn btn-primary" type="submit">Login</button>
+    
+  </form>
+  
+  <p class="text-center">Don't have an account? <a href="/register">Create an account</a>.</p>
+</div>
+
+{% endblock %}
